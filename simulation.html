@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation - JMB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-small">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Retour</a>
+            <h1>🎯 Simulation Examen</h1>
+        </header>
+
+        <div class="simulation-container" id="simulationContainer">
+            <div class="tirage-section" id="tirageSection">
+                <h2>Tirage au sort</h2>
+                <div class="tirage-display" id="tirageDisplay">
+                    <span class="tirage-number">--</span>
+                </div>
+                <button class="btn-primary btn-large" id="startSimBtn">
+                    <i class="fas fa-play"></i> Lancer la simulation
+                </button>
+            </div>
+
+            <div class="quiz-section hidden" id="quizSection">
+                <div class="quiz-progress">
+                    Question <span id="currentQ">1</span>/3
+                </div>
+
+                <div class="quiz-card">
+                    <h3 id="quizQuestion"></h3>
+                    <textarea id="userAnswer" placeholder="Tape ta réponse ici..." rows="4"></textarea>
+                    
+                    <div class="quiz-feedback hidden" id="feedback">
+                        <div class="feedback-content" id="feedbackContent"></div>
+                        <div class="correct-answer" id="correctAnswer"></div>
+                    </div>
+
+                    <button class="btn-primary" id="submitAnswerBtn">Valider</button>
+                    <button class="btn-secondary hidden" id="nextQuestionBtn">Question suivante</button>
+                </div>
+            </div>
+
+            <div class="results-section hidden" id="resultsSection">
+                <div class="results-card">
+                    <h2>🎉 Simulation terminée !</h2>
+                    <div class="score-display">
+                        <div class="score-big" id="finalScore">0/3</div>
+                        <div class="points-earned" id="pointsEarned">+0 points</div>
+                    </div>
+                    <div class="results-details" id="resultsDetails"></div>
+                    <button class="btn-primary btn-large" id="newSimBtn">
+                        <i class="fas fa-redo"></i> Nouvelle simulation
+                    </button>
+                    <a href="scores.html" class="btn-secondary">Voir mes scores</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/scores.js"></script>
+</body>
+</html>

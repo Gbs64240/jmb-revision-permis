@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Scores - JMB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-small">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Retour</a>
+            <h1>🏆 Mes Scores</h1>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <div class="stat-value" id="totalPoints">0</div>
+                <div class="stat-label">Points totaux</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-check-circle"></i>
+                <div class="stat-value" id="totalSimulations">0</div>
+                <div class="stat-label">Simulations</div>
+            </div>
+
+            <div class="stat-card">
+                <i class="fas fa-percentage"></i>
+                <div class="stat-value" id="successRate">0%</div>
+                <div class="stat-label">Taux de réussite</div>
+            </div>
+        </div>
+
+        <div class="badges-section">
+            <h2>🎖️ Badges débloqués</h2>
+            <div class="badges-grid" id="badgesGrid">
+                <!-- Badges chargés dynamiquement -->
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h2>📊 Historique des simulations</h2>
+            <div class="history-list" id="historyList">
+                <!-- Historique chargé dynamiquement -->
+            </div>
+        </div>
+
+        <button class="btn-secondary" id="exportBtn">
+            <i class="fas fa-download"></i> Exporter mes résultats (CSV)
+        </button>
+        
+        <button class="btn-danger" id="resetBtn">
+            <i class="fas fa-trash"></i> Réinitialiser les scores
+        </button>
+    </div>
+
+    <script src="js/scores.js"></script>
+    <script>
+        displayScores();
+    </script>
+</body>
+</html>
+/* ===== NOTIFICATION DE BADGE ===== */
+.badge-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 300px;
+}
+
+.badge-notification.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.badge-icon-big {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.badge-notification h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.badge-notification p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}

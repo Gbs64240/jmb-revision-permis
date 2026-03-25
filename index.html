@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMB - Révision Permis B</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="assets/logo.png" alt="Auto-école JMB" class="logo">
+            <h1>Révision Permis B</h1>
+            <p class="subtitle">Révise les vérifications intérieures du permis B — simulations réalistes et fiches rapides pour réussir ton examen.</p>
+        </header>
+
+        <main class="main-menu">
+            <div class="menu-grid">
+                <a href="revision.html" class="menu-card card-revision">
+                    <i class="fas fa-book"></i>
+                    <h2>Révision</h2>
+                    <p>Fiches détaillées par chapitre</p>
+                </a>
+
+                <a href="simulation.html" class="menu-card card-simulation">
+                    <i class="fas fa-bullseye"></i>
+                    <h2>Simulation</h2>
+                    <p>Entraîne-toi comme à l'examen</p>
+                </a>
+
+                <a href="memo.html" class="menu-card card-memo">
+                    <i class="fas fa-bolt"></i>
+                    <h2>Mémo Rapide</h2>
+                    <p>Révisions express</p>
+                </a>
+
+                <a href="scores.html" class="menu-card card-scores">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Mes Scores</h2>
+                    <p>Progression & badges</p>
+                    <div class="score-preview" id="scorePreview">0 pts</div>
+                </a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Auto-école JMB - Hasparren • Itxassou • Ustaritz</p>
+            <p>☎️ 05 59 29 34 41</p>
+        </footer>
+    </div>
+
+    <script src="js/scores.js"></script>
+    <script>
+        // Afficher le score actuel
+        const totalScore = getTotalScore();
+        document.getElementById('scorePreview').textContent = totalScore + ' pts';
+    </script>
+</body>
+</html>

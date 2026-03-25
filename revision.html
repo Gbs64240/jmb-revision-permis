@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Révision - JMB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-small">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Retour</a>
+            <h1>📚 Mode Révision</h1>
+        </header>
+
+        <div class="chapter-selector">
+            <button class="chapter-btn active" data-category="installation">Installation</button>
+            <button class="chapter-btn" data-category="enfants">Enfants</button>
+            <button class="chapter-btn" data-category="documents">Documents</button>
+            <button class="chapter-btn" data-category="voyants">Voyants</button>
+            <button class="chapter-btn" data-category="commandes">Commandes</button>
+            <button class="chapter-btn" data-category="tableau">Tableau de bord</button>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+            <span class="progress-text" id="progressText">0/0</span>
+        </div>
+
+        <div class="flashcard" id="flashcard">
+            <div class="flashcard-number" id="cardNumber"></div>
+            <h2 id="cardTitle"></h2>
+            <div class="flashcard-question" id="cardQuestion"></div>
+            
+            <button class="reveal-btn" id="revealBtn">
+                <i class="fas fa-eye"></i> Voir la réponse
+            </button>
+
+            <div class="flashcard-answer hidden" id="cardAnswer">
+                <h3>✅ Réponse</h3>
+                <p id="answerText"></p>
+                
+                <div class="errors-section" id="errorsSection">
+                    <h4>⚠️ Erreurs fréquentes</h4>
+                    <ul id="errorsList"></ul>
+                </div>
+
+                <div class="tip-section">
+                    <h4>💡 Astuce</h4>
+                    <p id="tipText"></p>
+                </div>
+            </div>
+
+            <div class="flashcard-navigation">
+                <button class="nav-btn" id="prevBtn"><i class="fas fa-chevron-left"></i> Précédent</button>
+                <button class="nav-btn primary" id="nextBtn">Suivant <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/scores.js"></script>
+</body>
+</html>
